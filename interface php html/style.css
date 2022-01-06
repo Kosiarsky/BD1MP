@@ -1,0 +1,173 @@
+﻿body {
+	background: url(images/background.jpg) fixed;
+	color: #ddd;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top;
+	text-align: left;
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a:link {
+	text-decoration: none;
+	color: #bbb;
+	-webkit-transition:0.5s;
+	transition:0.5s;
+	-o-transition:0.5s;
+	-ms-transition:0.5s;
+	-moz-transition:0.5s;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #bbb;
+	-webkit-transition:0.5s;
+	transition:0.5s;
+	-o-transition:0.5s;
+	-ms-transition:0.5s;
+	-moz-transition:0.5s;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #fff;
+	-webkit-transition:0.5s;
+	transition:0.5s;
+	-o-transition:0.5s;
+	-ms-transition:0.5s;
+	-moz-transition:0.5s;
+}
+
+#content {
+	width: 100%;
+	height: 94%;
+	margin: 0;
+}
+
+#menuboczne {
+    width: 20%;
+	margin-left: 2.5%;
+	position: absolute; 
+	min-height: auto;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	background: rgba(2,2,2, 0.7);
+	border-top: 2px solid rgba(0, 150, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 150, 0, 0.5);
+}
+
+#srodek {
+    width: 70%;
+	margin-left: 25%;
+	position: absolute; 
+	min-height: auto;
+	text-align: left;
+	background: rgba(2,2,2, 0.7);
+	border-top: 2px solid rgba(0, 150, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 150, 0, 0.5);
+}
+
+#srodek2 {
+    width: 70%;
+	margin: auto;
+	position: absolute; 
+	min-height: auto;
+	padding: 24px;
+	background: rgba(2,2,2, 0.7);
+	border-top: 2px solid rgba(0, 150, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 150, 0, 0.5);
+}
+
+.belka {
+		padding: 20px;
+		background: rgba(0,150,0, 0.7);
+}
+
+.belka2 {
+		padding: 10px;
+		margin-bottom: 10px;
+		background: rgba(0,150,0, 0.5);
+}
+
+.tab {
+	border-top: 2px solid rgba(0, 160, 0, 0.5);
+	padding: 9px;
+	border-bottom: 2px solid rgba(0, 160, 0, 0.5);
+}
+
+.tab2 {
+	padding: 9px;
+	border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+}
+
+.autor {
+	bottom: 0px;
+	margin-top: 50px;
+	padding: 15px;
+	font-size: 11px;
+}
+
+.textlogin {
+	border-right: 6px solid rgba(0, 160, 0, 0.75);
+	border-left: 6px solid rgba(0, 160, 0, 0.75);
+	background: rgba(20, 20, 20, 0.30);
+	border-top: 1px solid rgba(0, 160, 0, 0.0);
+	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
+	padding: 5px 10px;
+	width: 150px;
+	margin: 3px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.submitlogin {
+	border-right: 6px solid rgba(0, 160, 0, 0.75);
+	border-left: 6px solid rgba(0, 160, 0, 0.75);
+	background: rgba(20, 20, 20, 0.30);
+	border-top: 1px solid rgba(0, 160, 0, 0.0);
+	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
+	padding: 5px 10px;
+	margin: 3px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.menuboczne {
+	width: 97%;
+	border-top: 1px solid rgba(0, 160, 0, 0.5);
+	padding: 5px;
+	border-bottom: 1px solid rgba(0, 160, 0, 0.5);
+	text-decoration: none;
+	color: #ccc;
+	margin-bottom: 12px;
+	text-align: center;
+	-webkit-transition:0.5s;
+	transition:0.5s;
+	-o-transition:0.5s;
+	-ms-transition:0.5s;
+	-moz-transition:0.5s;
+}
+
+.menuboczne a:link, .menuboczne a:visited, .menuboczne a:hover {
+	text-decoration: none;
+	color: #ccc;
+	font-weight: 400;
+	font-family: Arial;
+}
+
+.menuboczne:hover {
+    width: 97%;
+	text-decoration: none;
+	background: rgba(50,50,50, 0.65);
+	color: #fff;
+	text-align: center;
+}
+
+.borderarena {
+	padding: 5px;
+	border-bottom: 1px solid rgba(30, 192, 0, 0.10);
+}
