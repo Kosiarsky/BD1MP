@@ -94,6 +94,7 @@ a:hover {
 }
 
 .tab {
+	text-transform:uppercase;
 	border-top: 2px solid rgba(0, 160, 0, 0.5);
 	padding: 9px;
 	border-bottom: 2px solid rgba(0, 160, 0, 0.5);

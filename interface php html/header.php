@@ -17,6 +17,7 @@
 		<a href="dbcreate.php"><div class="menuboczne">DODAJ BAZĘ DANYCH</div></a>
 		<a href="dbclear.php"><div class="menuboczne">WYCZYŚĆ WSZYSTKIE TABELE</div></a>
 		<a href="dbinsert.php"><div class="menuboczne">UZUPEŁNIJ WSZYSTKIE TABELE</div></a>
+		<a href="vwviews.php"><div class="menuboczne">WIDOKI</div></a>
 		<div class="autor" align="center"></br></br></br>Created by PSKGENG</div>
 	</div>
 	<div id="srodek" align="center">

@@ -8,7 +8,7 @@ include "header.php";
 	<div class="belka">LISTA TABEL</div>
 	<div style="margin:24px;">
 	<?php
-	$query = mysql_query ("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin'");
+	$query = mysql_query ("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin' AND tables_in_".$mysql_dbb." != 'view_pracownicy' AND tables_in_".$mysql_dbb." != 'view_samochody' AND tables_in_".$mysql_dbb." != 'view_wlasciciele' AND tables_in_".$mysql_dbb." != 'view_kontrole' AND tables_in_".$mysql_dbb." != 'view_kontrole_week' AND tables_in_".$mysql_dbb." != 'view_utarg'");
 	if(mysql_num_rows($query))
 	{
 		echo '<table width="100%" cellspacing="0"><tr class="tab" style="font-size: 15px; margin:0;">';

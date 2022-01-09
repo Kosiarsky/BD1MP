@@ -9,7 +9,7 @@ include "header.php";
 	<div style="margin:24px; text-align: center;">
 		<?php	
 		$id = $_GET["id"];
-		$zapytanie = mysql_query("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin'");
+		$zapytanie = mysql_query("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin' AND tables_in_".$mysql_dbb." != 'view_pracownicy' AND tables_in_".$mysql_dbb." != 'view_samochody' AND tables_in_".$mysql_dbb." != 'view_wlasciciele' AND tables_in_".$mysql_dbb." != 'view_kontrole' AND tables_in_".$mysql_dbb." != 'view_kontrole_week' AND tables_in_".$mysql_dbb." != 'view_utarg'");
 			
 		if($id == 1) {
 
@@ -65,7 +65,7 @@ include "header.php";
 					k_data_kontroli           DATE,
 					k_data_nastepnej_kontroli DATE,
 					k_cena                    INTEGER,
-					p_id                      INTEGER NOT NULL,
+					p_id                      INTEGER,
 					s_id                      INTEGER NOT NULL
 				)");
 
@@ -116,7 +116,7 @@ include "header.php";
 					s_marka               CHAR(30),
 					s_model               CHAR(30),
 					s_generacja           CHAR(30),
-					w_id                  INTEGER NOT NULL,
+					w_id                  INTEGER,
 					pp_id                 INTEGER NOT NULL,
 					dp_id                 INTEGER NOT NULL,
 					sp_id                 INTEGER NOT NULL
