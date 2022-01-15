@@ -33,6 +33,7 @@
 					<div id="srodek2" align="center">
 						<meta http-equiv="refresh" content="1; URL=index2.php">
 						<p style="padding-top:10px;"><strong>Proszę czekać...</strong><br>Trwa logowanie i wczytywanie danych...<p></p>
+						<a href="index2.php" style="">Kliknij tutaj, aby nie czekać.</a>
 					</div>
 				</div>
 				<?php

@@ -3,7 +3,6 @@
 <head>
 <title>PSK Bazy Danych Projekt</title>			
 <link rel="stylesheet" type="text/css" href="style.css">
-<meta content="Wiesiek" name="Author"></meta>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></meta>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>	
 <script src="http://code.jquery.com/jquery-latest.js"></script>
