@@ -12,14 +12,13 @@ ALTER TABLE adresy ADD CONSTRAINT ad_pk PRIMARY KEY ( ad_id );
 
 CREATE TABLE dane_pojazdow (
     dp_id                         NUMBER NOT NULL,
-    dp_data_produkcji             DATE,
-    dp_data_pierwszej_rejestracji DATE,
     dp_paliwo                     VARCHAR2(10),
     dp_przebieg                   NUMBER,
-    dp_pojemnosc                  NUMBER,
+    dp_pojemnosc                  VARCHAR2(3),
     dp_moc_km                     NUMBER,
-    dp_moc_nm                     NUMBER,
-    dp_masa_wlasna                NUMBER
+    dp_moc_kw                     NUMBER,
+    dp_masa_wlasna                NUMBER,
+    dp_skrzynia_biegow            VARCHAR2(20)
 );
 
 ALTER TABLE dane_pojazdow ADD CONSTRAINT dp_pk PRIMARY KEY ( dp_id );
@@ -30,13 +29,14 @@ CREATE TABLE informacje_osobowe (
     if_nazwisko       VARCHAR2(30),
     if_plec           VARCHAR2(15),
     if_data_urodzenia DATE,
-    if_pesel          NUMBER,
-    if_telefon        NUMBER,
+    if_pesel          VARCHAR2(11),
+    if_telefon        VARCHAR2(9),
     ad_id             NUMBER NOT NULL
 );
 
 ALTER TABLE informacje_osobowe ADD CONSTRAINT if_pk PRIMARY KEY ( if_id );
 ALTER TABLE informacje_osobowe ADD CONSTRAINT if_unique UNIQUE ( if_pesel, if_telefon );
+ALTER TABLE informacje_osobowe ADD CONSTRAINT plec_check CHECK (if_plec IN ('Mezczyzna', 'Kobieta'));
 
 CREATE TABLE kontrole (
     k_id                      NUMBER NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE kontrole (
     k_data_kontroli           DATE,
     k_data_nastepnej_kontroli DATE,
     k_cena                    NUMBER,
-    p_id                      NUMBER NOT NULL,
+    p_id                      NUMBER,
     s_id                      NUMBER NOT NULL
 );
 
@@ -57,10 +57,10 @@ ALTER TABLE kontrole ADD CONSTRAINT hak_check CHECK (k_hak IN ('TAK', 'NIE'));
 
 CREATE TABLE placowki (
     pl_id                 NUMBER NOT NULL,
-    pl_telefon            NUMBER,
-    pl_fax                NUMBER,
-    pl_godzina_otwarcia   DATE,
-    pl_godzina_zamkniecia DATE,
+    pl_telefon            VARCHAR2(9),
+    pl_fax                VARCHAR2(12),
+    pl_godzina_otwarcia   VARCHAR2(5),
+    pl_godzina_zamkniecia VARCHAR2(5),
     ad_id                 NUMBER NOT NULL
 );
 
@@ -97,7 +97,7 @@ CREATE TABLE samochody (
     s_marka               VARCHAR2(30),
     s_model               VARCHAR2(30),
     s_generacja           VARCHAR2(30),
-    w_id                  NUMBER NOT NULL,
+    w_id                  NUMBER,
     pp_id                 NUMBER NOT NULL,
     dp_id                 NUMBER NOT NULL,
     sp_id                 NUMBER NOT NULL
@@ -127,6 +127,12 @@ CREATE TABLE stany_pojazdow (
 );
 
 ALTER TABLE stany_pojazdow ADD CONSTRAINT sp_pk PRIMARY KEY ( sp_id );
+ALTER TABLE stany_pojazdow ADD CONSTRAINT silnik_check CHECK (sp_silnik IN ('SPRAWNE', 'NIESPRAWNE'));
+ALTER TABLE stany_pojazdow ADD CONSTRAINT hamulce_check CHECK (sp_hamulce IN ('SPRAWNE', 'NIESPRAWNE'));
+ALTER TABLE stany_pojazdow ADD CONSTRAINT amortyzatory_check CHECK (sp_amortyzatory IN ('SPRAWNE', 'NIESPRAWNE'));
+ALTER TABLE stany_pojazdow ADD CONSTRAINT zawieszenie_check CHECK (sp_zawieszenie IN ('SPRAWNE', 'NIESPRAWNE'));
+ALTER TABLE stany_pojazdow ADD CONSTRAINT zarowki_check CHECK (sp_zarowki IN ('SPRAWNE', 'NIESPRAWNE'));
+ALTER TABLE stany_pojazdow ADD CONSTRAINT lampy_check CHECK (sp_lampy IN ('SPRAWNE', 'NIESPRAWNE'));
 
 CREATE TABLE wlasciciele (
     w_id                  NUMBER NOT NULL,
@@ -143,15 +149,15 @@ ALTER TABLE wlasciciele ADD CONSTRAINT w_unique UNIQUE ( if_id );
 CREATE TABLE zmiany_pracownicze (
     zp_id                  NUMBER NOT NULL,
     zp_data                DATE,
-    zp_godzina_rozpoczecia DATE,
-    zp_godzina_zakonczenia DATE,
+    zp_godzina_rozpoczecia VARCHAR2(10),
+    zp_godzina_zakonczenia VARCHAR2(10),
     zp_liczba_kontroli     NUMBER,
     zp_przerwa             VARCHAR2(3),
     p_id                   NUMBER NOT NULL
 );
 
 ALTER TABLE zmiany_pracownicze ADD CONSTRAINT zp_pk PRIMARY KEY ( zp_id );
-ALTER TABLE zmiany_pracownicze ADD CONSTRAINT przrwa_check CHECK (zp_przerwa IN ('TAK', 'NIE'));
+ALTER TABLE zmiany_pracownicze ADD CONSTRAINT przerwa_check CHECK (zp_przerwa IN ('TAK', 'NIE'));
 
 ALTER TABLE informacje_osobowe
     ADD CONSTRAINT ifad_fk FOREIGN KEY ( ad_id )
@@ -203,4 +209,4 @@ ALTER TABLE wlasciciele
 
 ALTER TABLE zmiany_pracownicze
     ADD CONSTRAINT zpp_fk FOREIGN KEY ( p_id )
-        REFERENCES pracownicy ( p_id );
+        REFERENCES pracownicy ( p_id ); 
