@@ -253,9 +253,9 @@ include "header.php";
 				$insert_querry = mysql_query("INSERT INTO kontrole (k_id, k_pozytywny, k_lpg, k_hak, k_data_kontroli, k_data_nastepnej_kontroli, k_cena, p_id, s_id) VALUES (015,'NIE','NIE','TAK', STR_TO_DATE('2022/01/06','%Y/%m/%d'), STR_TO_DATE('2023/01/06','%Y/%m/%d'),420,015,015)");
 
 				if($insert_querry > 0) {
-					echo 'Tabele zostaną uzupełnione. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Tabele zostaną uzupełnione. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 				} else {
-					echo 'Wystąpił błąd, tabele nie zostaną uzupełnione.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd, tabele nie zostaną uzupełnione.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 				}
 			} else {
 				echo '<span class="belka2">BAZA DANYCH JEST PUSTA</span>';
@@ -264,7 +264,7 @@ include "header.php";
 			
 		} else {
 			if(mysql_num_rows($zapytanie)) {
-				echo 'Czy na pewno chcesz uzupełnić tabele przygotowanymi rekordami? <br><br> <a href="dbinsert.php?id=1" class="belka2">UZUPEŁNIJ</a>';
+				echo '<div class="text">Czy na pewno chcesz uzupełnić tabele przygotowanymi rekordami? </div><br><br> <a href="dbinsert.php?id=1" class="belka2">UZUPEŁNIJ</a>';
 			} else {
 				echo '<span class="belka2">BAZA DANYCH JEST PUSTA</span>';
 			}

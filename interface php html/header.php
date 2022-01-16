@@ -12,11 +12,12 @@
 	<div id="menuboczne">
 	    <br><br>
 		<a href="index2.php"><div class="menuboczne">WYŚWIETL LISTĘ TABEL</div></a>
-		<a href="dbdelete.php"><div class="menuboczne">USUŃ BAZĘ DANYCH</div></a>
-		<a href="dbcreate.php"><div class="menuboczne">DODAJ BAZĘ DANYCH</div></a>
-		<a href="dbclear.php"><div class="menuboczne">WYCZYŚĆ WSZYSTKIE TABELE</div></a>
-		<a href="dbinsert.php"><div class="menuboczne">UZUPEŁNIJ WSZYSTKIE TABELE</div></a>
+		<a href="dbdelete.php"><div class="menuboczne">USUŃ WSZYSTKIE TABELE</div></a>
+		<a href="dbcreate.php"><div class="menuboczne">DODAJ TABELE</div></a>
+		<a href="dbclear.php"><div class="menuboczne">WYCZYŚĆ TABELE</div></a>
+		<a href="dbinsert.php"><div class="menuboczne">UZUPEŁNIJ TABELE</div></a>
 		<a href="vwviews.php"><div class="menuboczne">WIDOKI</div></a>
+		<a href="add.php"><div class="menuboczne">DODAJ REKORDY</div></a>
 		<div class="autor" align="center"></br></br></br>Created by PSKGENG</div>
 	</div>
 	<div id="srodek" align="center">

@@ -21,7 +21,7 @@ include "header.php";
 		}
 		echo '</table>';
 	} else {
-		echo '<span class="belka2">BAZA DANYCH JEST PUSTA</span>';
+		echo '<div style="text-align: center;"><span class="belka2">BAZA DANYCH JEST PUSTA</span></div>';
 	}
 
 	?>

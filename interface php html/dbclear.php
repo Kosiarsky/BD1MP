@@ -30,14 +30,14 @@ include "header.php";
 			}
 			
 			if($clear_query > 0) {
-				echo 'Tabele zostaną wyczyszczone. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+				echo '<div class="text">Tabele zostaną wyczyszczone. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 			} else {
-				echo 'Wystąpił błąd, tabele nie zostaną wyczyszczone.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+				echo '<div class="text">Wystąpił błąd, tabele nie zostaną wyczyszczone.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 			}
 		} else {
 			if(mysql_num_rows($zapytanie))
 			{
-				echo 'Czy na pewno chcesz wyczyścić wszystkie tabele w bazie danych? <br> Czynność ta jest nieodwracalna! <br><br> <a href="dbclear.php?id=1" class="belka2">TAK WYCZYŚĆ</a>';
+				echo '<div class="text">Czy na pewno chcesz wyczyścić wszystkie tabele w bazie danych? <br> Czynność ta jest nieodwracalna! </div><br><br> <a href="dbclear.php?id=1" class="belka2">TAK WYCZYŚĆ</a>';
 			} else {
 				echo '<span class="belka2">TABELE SĄ PUSTE</span>';
 			}

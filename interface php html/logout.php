@@ -16,7 +16,8 @@ session_destroy();
 	<div style="width: 70%; margin: auto auto;">
 	<div id="srodek2" align="center">
 	
-      <?php echo $komunikat ; echo '<meta http-equiv="refresh" content="2; URL=index.php">';?>
+    <p style="padding-top:10px;"><div class="text"><?php echo $komunikat ; echo '<meta http-equiv="refresh" content="2; URL=index.php">';?></div></p><br><br>
+	<a href="index.php" class="belka2" style="margin: 20px;">Kliknij tutaj, aby nie czekać.</a>
   
 	</div>
 	</div>

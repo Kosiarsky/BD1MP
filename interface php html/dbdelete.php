@@ -9,7 +9,7 @@ include "header.php";
 	<div style="margin:24px; text-align: center;">
 		<?php	
 		$id = $_GET["id"];
-		$zapytanie = mysql_query("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin'");
+		$zapytanie = mysql_query("SHOW TABLES In ".$mysql_dbb." WHERE tables_in_".$mysql_dbb." != 'php_admin' AND tables_in_".$mysql_dbb." != 'view_pracownicy' AND tables_in_".$mysql_dbb." != 'view_samochody' AND tables_in_".$mysql_dbb." != 'view_wlasciciele' AND tables_in_".$mysql_dbb." != 'view_kontrole' AND tables_in_".$mysql_dbb." != 'view_kontrole_week' AND tables_in_".$mysql_dbb." != 'view_utarg'");
 			
 		if($id == 1) {
 
@@ -33,14 +33,14 @@ include "header.php";
 			}
 			
 			if($delete_query > 0) {
-				echo 'Tabele zostaną usunięte. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+				echo '<div class="text">Tabele zostaną usunięte. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 			} else {
-				echo 'Wystąpił błąd, tabele nie zostaną usunięte.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+				echo '<div class="text">Wystąpił błąd, tabele nie zostaną usunięte.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 			}
 		} else {
 			if(mysql_num_rows($zapytanie))
 			{
-				echo 'Czy na pewno chcesz usunąć całą bazę danych wraz z jej zawartością? <br> Czynność ta jest nieodwracalna! <br><br> <a href="dbdelete.php?id=1" class="belka2">TAK USUŃ BAZE DANYCH</a>';
+				echo '<div class="text">Czy na pewno chcesz usunąć całą bazę danych wraz z jej zawartością? <br> Czynność ta jest nieodwracalna! </div><br><br> <a href="dbdelete.php?id=1" class="belka2">TAK USUŃ BAZE DANYCH</a>';
 			} else {
 				echo '<span class="belka2">BAZA DANYCH JEST PUSTA</span>';
 			}

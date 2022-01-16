@@ -36,14 +36,14 @@ include "header.php";
 			} else {
 				echo '</tr>';
 				echo '</table>';
-				echo '<div style="text-align: center;">Brak rekordów w tabeli.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Brak rekordów w tabeli.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 			}
 		} else {
-			echo '<div style="text-align: center;">Nieznany błąd.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+			echo '<div style="text-align: center;"><div class="text">Nieznany błąd.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 			echo '<meta http-equiv="refresh" content="3; URL=index2.php">';
 		}
 	} else {
-		echo '<div style="text-align: center;">Probowałeś znaleźć tabelę <b>'.$table_name.'</b>. Niestety podana tabela nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+		echo '<div style="text-align: center;"><div class="text">Probowałeś znaleźć tabelę <b>'.$table_name.'</b>. Niestety podana tabela nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 		echo '<meta http-equiv="refresh" content="3; URL=index2.php">';
 	}
 	?>

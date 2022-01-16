@@ -32,8 +32,8 @@
 				<div style="width: 70%; margin: auto auto;">
 					<div id="srodek2" align="center">
 						<meta http-equiv="refresh" content="1; URL=index2.php">
-						<p style="padding-top:10px;"><strong>Proszę czekać...</strong><br>Trwa logowanie i wczytywanie danych...<p></p>
-						<a href="index2.php" style="">Kliknij tutaj, aby nie czekać.</a>
+						<p style="padding-top:10px;"><div class="text"><strong>Proszę czekać...</strong><br>Trwa logowanie i wczytywanie danych...</div></p><br><br>
+						<a href="index2.php" class="belka2" style="margin: 20px;">Kliknij tutaj, aby nie czekać.</a>
 					</div>
 				</div>
 				<?php
@@ -44,8 +44,8 @@
 				<div style="width: 70%; margin: auto auto;">
 					<div id="srodek2" align="center">
 						<meta http-equiv="refresh" content="2; URL=index.php">
-						<p style="padding-top:10px;">Błąd podczas logowania do systemu. Zaraz nastąpi przekierowanie.</p><br><br>
-						<a href="index.php" style="">Kliknij tutaj, aby nie czekać.</a>
+						<p style="padding-top:10px;"><div class="text">Błąd podczas logowania do systemu. Zaraz nastąpi przekierowanie.</div></p><br><br>
+						<a href="index.php" class="belka2" style="margin: 20px;">Kliknij tutaj, aby nie czekać.</a>
 					</div>
 				</div>
 				<?php
@@ -56,8 +56,8 @@
 				<div style="width: 70%; margin: auto auto;">
 					<div id="srodek2" align="center">
 						<meta http-equiv="refresh" content="2; URL=index.php">
-						<p style="padding-top:10px;">Błąd podczas logowania do systemu. Zaraz nastąpi przekierowanie.</p><br><br>
-						<a href="index.php" style="">Kliknij tutaj, aby nie czekać.</a>
+						<p style="padding-top:10px;"><div class="text">Błąd podczas logowania do systemu. Zaraz nastąpi przekierowanie.</div></p><br><br>
+						<a href="index.php" class="belka2" style="margin: 20px;">Kliknij tutaj, aby nie czekać.</a>
 					</div>
 				</div>
 				<?php

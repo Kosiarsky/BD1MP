@@ -25,14 +25,45 @@ include "header.php";
 				$delete_query = mysql_query("DELETE FROM stanowiska WHERE st_id = ".$st_id."");
 	
 				if($delete_query > 0) {
-					echo 'Pracownik zostanie usunięty. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Pracownik zostanie usunięty. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Pracownik nie zostanie usunięty.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Pracownik nie zostanie usunięty.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć pracownika o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć pracownika o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
+			}
+		} else if ($view == 'placowki') {
+			$query = mysql_query("SELECT * FROM view_placowki WHERE id = ".$id."");
+			if(mysql_num_rows($query)) {
+				$query_row = mysql_fetch_array($query);
+				$query2 = mysql_query("SELECT * FROM placowki, pracownicy, informacje_osobowe WHERE pracownicy.pl_id = placowki.pl_id AND pracownicy.if_id = informacje_osobowe.if_id");
+				$query2_row = mysql_fetch_array($query2);
+				$pl_ad_id = $query_row['ad_id'];
+				$p_id = $query2_row['p_id'];
+				$st_id = $query2_row['st_id'];
+				$ad_id = $query2_row['ad_id'];
+				$if_id = $query2_row['if_id'];
+				$delete_query = mysql_query("UPDATE kontrole SET p_id = null WHERE p_id = ".$p_id."");
+				$delete_query = mysql_query("DELETE FROM zmiany_pracownicze WHERE p_id = ".$p_id."");
+				$delete_query = mysql_query("DELETE FROM pracownicy WHERE p_id = ".$p_id."");
+				$delete_query = mysql_query("DELETE FROM informacje_osobowe WHERE if_id = ".$if_id."");
+				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$ad_id."");
+				$delete_query = mysql_query("DELETE FROM stanowiska WHERE st_id = ".$st_id."");
+				$delete_query = mysql_query("DELETE FROM placowki WHERE pl_id = ".$id."");
+				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$pl_ad_id."");
+	
+				if($delete_query > 0) {
+					echo '<div class="text">Placowka zostanie usunięta. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
+				} else {
+					echo '<div class="text">Wystąpił błąd. Placówka nie zostanie usunięty.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
+				}
+			} else {
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć pracownika o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else if ($view == 'wlasciciele') {
@@ -47,14 +78,14 @@ include "header.php";
 				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$ad_id."");
 	
 				if($delete_query > 0) {
-					echo 'Wlasciciel zostanie usunięty. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wlasciciel zostanie usunięty. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Wlasciciel nie zostanie usunięty.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Wlasciciel nie zostanie usunięty.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć wlasciciela o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć wlasciciela o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else if ($view == 'samochody') {
@@ -80,15 +111,15 @@ include "header.php";
 				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$ad_id."");
 	
 				if($delete_query > 0) {
-					echo 'Samochod zostanie usunięty. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Samochod zostanie usunięty. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Samochod nie zostanie usunięty.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Samochod nie zostanie usunięty.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 				
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć samochod o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć samochod o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else if ($view == 'kontrole') {
@@ -115,14 +146,14 @@ include "header.php";
 				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$ad_id."");
 	
 				if($delete_query > 0) {
-					echo 'Kontrola zostanie usunięta. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Kontrola zostanie usunięta. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Kontrola nie zostanie usunięta.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Kontrola nie zostanie usunięta.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć kontrole o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć kontrole o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else if ($view == 'kontroleweek') {
@@ -149,14 +180,14 @@ include "header.php";
 				$delete_query = mysql_query("DELETE FROM adresy WHERE ad_id = ".$ad_id."");
 	
 				if($delete_query > 0) {
-					echo 'Kontrola zostanie usunięta. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Kontrola zostanie usunięta. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Kontrola nie zostanie usunięta.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Kontrola nie zostanie usunięta.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć kontrole o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć kontrole o ID <b>'.$id.'</b>. Niestety podane ID nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else if ($view == 'utarg') {
@@ -185,18 +216,18 @@ include "header.php";
 					
 				}
 				if($delete_query > 0) {
-					echo 'Kontrole zostaną usunięte. <br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Kontrole zostaną usunięte. </div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				} else {
-					echo 'Wystąpił błąd. Kontrole nie zostaną usunięte.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
+					echo '<div class="text">Wystąpił błąd. Kontrole nie zostaną usunięte.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a>';
 					echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 				}
 			} else {
-				echo '<div style="text-align: center;">Probowałeś usunąć kontrole odbyte w dniu <b>'.$id.'</b>. Niestety podane data nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+				echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć kontrole odbyte w dniu <b>'.$id.'</b>. Niestety podane data nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 				echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 			}
 		} else {
-			echo '<div style="text-align: center;">Probowałeś usunąć rekord z widoku <b>'.$view.'</b>. Niestety podany widok nie istnieje.<br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
+			echo '<div style="text-align: center;"><div class="text">Probowałeś usunąć rekord z widoku <b>'.$view.'</b>. Niestety podany widok nie istnieje.</div><br><br> <a href="javascript: history.go(-1)" class="belka2">Powrót</a></div>';
 			echo '<meta http-equiv="refresh" content="2; URL=vwviews.php?view='.$view.'">';
 		}
 		?>
