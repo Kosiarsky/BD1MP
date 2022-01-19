@@ -1,3 +1,10 @@
+drop view view_wlasciciele;
+drop view view_placowki;
+drop view view_pracownicy;
+drop view view_samochody;
+drop view view_kontrole;
+drop view view_kontrole_week;
+drop view view_utarg;
 ALTER TABLE informacje_osobowe DROP FOREIGN KEY ifad_fk;
 ALTER TABLE kontrole DROP FOREIGN KEY kp_fk;
 ALTER TABLE kontrole DROP FOREIGN KEY ks_fk;
@@ -13,3 +20,4 @@ ALTER TABLE wlasciciele DROP FOREIGN KEY wif_fk;
 ALTER TABLE zmiany_pracownicze DROP FOREIGN KEY zpp_fk;	
 DROP TABLE IF EXISTS
 kontrole, pracownicy, samochody, placowki, zmiany_pracownicze, stanowiska, dane_pojazdow, stany_pojazdow, produkcja_pojazdow, wlasciciele, informacje_osobowe, adresy CASCADE;
+
