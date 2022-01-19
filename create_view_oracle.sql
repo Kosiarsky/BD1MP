@@ -6,6 +6,13 @@ select * from view_wlasciciele;
 drop view view_wlasciciele;
 
 
+create or replace view view_placowki (id,kraj,wojewodztwo,miasto,ulica,nr_domu,kod_pocztowy, telefon, fax, godzina_otwarcia, godzina_zamkniecia, ad_id) 
+	as (SELECT pl.pl_id, a.ad_kraj, a.ad_wojewodztwo, a.ad_miasto, a.ad_ulica, a.ad_nr_domu, a.ad_kod_pocztowy, pl.pl_telefon, pl.pl_fax, pl.pl_godzina_otwarcia, pl.pl_godzina_zamkniecia, pl.ad_id
+	FROM placowki pl, adresy a WHERE pl.ad_id = a.ad_id);
+select * from view_placowki;
+drop view view_placowki;
+
+
 create or replace view view_pracownicy (id,imie,nazwisko,plec,data_urodzenia,pesel,telefon,kraj,wojewodztwo,miasto,ulica,nr_domu,kod_pocztowy, przepracowane_godziny, stawka, nazwa_stanowiska, opis_stanowiska, premia, st_id, ad_id, if_id) 
 	as (SELECT p.p_id, i.if_imie, i.if_nazwisko, i.if_plec, i.if_data_urodzenia, i.if_pesel, i.if_telefon, a.ad_kraj, a.ad_wojewodztwo, 
 	a.ad_miasto, a.ad_ulica, a.ad_nr_domu, a.ad_kod_pocztowy, p.p_przepracowane_godziny, p.p_stawka, st.st_nazwa, st.st_opis, st.st_premia, p.st_id, i.ad_id, p.if_id  
