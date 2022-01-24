@@ -19,7 +19,7 @@ CREATE TABLE adresy (
 
 CREATE TABLE dane_pojazdow (
     dp_id                         INT NOT NULL AUTO_INCREMENT,
-    dp_paliwo                     CHAR(10),
+    dp_paliwo                     CHAR(11),
     dp_przebieg                   INT,
     dp_pojemnosc                  CHAR(3),
     dp_moc_km                     INT,
@@ -214,3 +214,4 @@ ALTER TABLE wlasciciele
 ALTER TABLE zmiany_pracownicze
     ADD CONSTRAINT zpp_fk FOREIGN KEY ( p_id )
         REFERENCES pracownicy ( p_id ); 
+		
