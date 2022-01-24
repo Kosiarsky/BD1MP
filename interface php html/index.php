@@ -1,8 +1,11 @@
-<?php session_start(); ?>
-<?php require_once("connection.php"); connection(); include "header2.php"; ?>
-
-	<?php
-    if (!isset($_POST['login']) && !isset($_POST['password']) && $_SESSION['auth'] == FALSE) {
+<?php 
+session_start();
+require_once("connection.php"); 
+$conn = OpenCon(); 
+include "header2.php";
+if (!isset($_SESSION['auth'])) $_SESSION['auth'] = FALSE; 
+    $_SESSION['auth'] = 0; 
+if (!isset($_POST['login']) && !isset($_POST['password']) && $_SESSION['auth'] == FALSE) {
 	?>
 	<div style="width: 70%; margin: 0 auto;">
 	<div id="srodek2" align="center">
@@ -19,12 +22,12 @@
     elseif (isset($_POST['login']) && isset($_POST['password']) && $_SESSION['auth'] == FALSE) {
         if (!empty($_POST['login']) && !empty($_POST['password'])) {
 		$sol = 'y21sa7b';
-        $login = mysql_real_escape_string($_POST['login']);
-        $password = mysql_real_escape_string($_POST['password']);
+        $login = $conn->real_escape_string($_POST['login']);
+        $password = $conn->real_escape_string($_POST['password']);
 		
         $password = md5($password.$sol);
 		
-        $sql = mysql_num_rows(mysql_query("SELECT * FROM `php_admin` WHERE `login` = '$login' AND `password` = '$password'"));
+        $sql = mysqli_num_rows($conn->query("SELECT * FROM `php_admin` WHERE `login` = '$login' AND `password` = '$password'"));
             if ($sql == 1) {
                 $_SESSION['user'] = $login;
                 $_SESSION['auth'] = TRUE;
@@ -68,4 +71,5 @@
     }
 	
  include "footer2.php";
+ CloseCon($conn);
  ?>

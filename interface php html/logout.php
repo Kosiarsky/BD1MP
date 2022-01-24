@@ -1,12 +1,12 @@
 <?php
 session_start();
- if(!isSet($_SESSION['auth'])) {
- $komunikat = "Nie byłeś zalogowany!!!";
-}
-
- else{
- unset($_SESSION['auth']);
- $komunikat = "Wylogowanie prawidłowe!";
+require_once("connection.php"); 
+$conn = OpenCon(); 
+if(!isSet($_SESSION['auth'])) {
+	$komunikat = "Nie byłeś zalogowany!!!";
+} else {
+	unset($_SESSION['auth']);
+	$komunikat = "Wylogowanie prawidłowe!";
 }
 
 session_destroy();
@@ -22,4 +22,7 @@ session_destroy();
 	</div>
 	</div>
 	
-<?php include "footer2.php"; ?>
+<?php 
+include "footer2.php";
+CloseCon($conn);
+ ?>

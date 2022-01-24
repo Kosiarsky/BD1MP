@@ -84,8 +84,8 @@ a:hover {
 }
 
 .belka {
-		padding: 20px;
-		background: rgba(0,150,0, 0.7);
+	padding: 20px;
+	background: rgba(0,150,0, 0.7);
 }
 
 .belka2 {
@@ -166,7 +166,7 @@ a:hover {
 	padding: 5px 10px;
 	width: 350px;
 	margin: 3px auto;
-	font-size: 16px;
+	font-size: 14px;
 	color: #fff;
 }
 
@@ -186,12 +186,31 @@ a:hover {
 .add_submit {
 	border-right: 6px solid rgba(0, 160, 0, 0.75);
 	border-left: 6px solid rgba(0, 160, 0, 0.75);
-	background: rgba(40, 40, 40, 0.50);
+	background-color: rgba(0, 160, 0, 0.35);
 	border-top: 1px solid rgba(0, 160, 0, 0.0);
 	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
-	padding: 5px 10px;
+	text-transform:uppercase;
+	padding: 10px 100px;
 	margin: 3px;
-	font-size: 14px;
+	font-size: 18px;
+	color: #fff;
+	-webkit-transition:1s;
+	transition:1s;
+	-o-transition:1s;
+	-ms-transition:1s;
+	-moz-transition:1s;
+}
+
+.add_submit:hover {
+	border-right: 6px solid rgba(0, 160, 0, 0.75);
+	border-left: 6px solid rgba(0, 160, 0, 0.75);
+	background-color: rgba(0, 160, 0, 0.55);
+	border-top: 1px solid rgba(0, 160, 0, 0.0);
+	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
+	text-transform:uppercase;
+	padding: 10px 150px;
+	margin: 3px;
+	font-size: 18px;
 	color: #fff;
 }
 
@@ -202,7 +221,7 @@ datalist {
 	background: rgba(40, 40, 40, 0.50);
 	border-top: 1px solid rgba(0, 160, 0, 0.0);
 	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
-	padding: 5px 10px;
+	padding: 5px 70px;
 	margin: 3px;
 	font-size: 14px;
 	color: #fff;
@@ -260,7 +279,120 @@ option {
 	text-align: center;
 }
 
-.borderarena {
-	padding: 5px;
-	border-bottom: 1px solid rgba(30, 192, 0, 0.10);
+.radio-button {
+	display:none;
+}
+
+.filter-label {
+	display: inline-block;
+	color: #fff;
+	border-right: 6px solid rgba(0, 160, 0, 0.75);
+	border-left: 6px solid rgba(0, 160, 0, 0.75);
+	background: rgba(40, 40, 40, 0.50);
+	border-top: 1px solid rgba(0, 160, 0, 0.0);
+	border-bottom: 1px solid rgba(0, 160, 0, 0.0);
+	padding: 10px 20px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition:1s;
+	transition:1s;
+	-o-transition:1s;
+	-ms-transition:1s;
+	-moz-transition:1s;
+}
+
+
+.filter-label:hover {
+	background-color: rgba(40, 40, 40, 0.35);
+}
+
+#sp_silnik_s:checked~#filter .sp_silnik_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_silnik_n:checked~#filter .sp_silnik_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#sp_hamulce_s:checked~#filter .sp_hamulce_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_hamulce_n:checked~#filter .sp_hamulce_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#sp_amortyzatory_s:checked~#filter .sp_amortyzatory_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_amortyzatory_n:checked~#filter .sp_amortyzatory_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#sp_zawieszenie_s:checked~#filter .sp_zawieszenie_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_zawieszenie_n:checked~#filter .sp_zawieszenie_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#sp_zarowki_s:checked~#filter .sp_zarowki_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_zarowki_n:checked~#filter .sp_zarowki_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#sp_lampy_s:checked~#filter .sp_lampy_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#sp_lampy_n:checked~#filter .sp_lampy_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#k_lpg_s:checked~#filter .k_lpg_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#k_lpg_n:checked~#filter .k_lpg_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#k_hak_s:checked~#filter .k_hak_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#k_hak_n:checked~#filter .k_hak_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
+}
+
+#zp_przerwa_s:checked~#filter .zp_przerwa_s{
+	background-color: rgba(0, 160, 0, 0.35);
+}
+
+#zp_przerwa_n:checked~#filter .zp_przerwa_n {
+	background-color: rgba(160, 0, 0, 0.35);
+	border-right: 6px solid rgba(160, 0, 0, 0.75);
+	border-left: 6px solid rgba(160, 0, 0, 0.75);
 }
